@@ -33,25 +33,25 @@ lcd.set_color(1.0, 0.0, 0.0)
 lcd.clear()
 lcd.home()
 
+while count < 5:
+    spinner()
+    count += 1
 
-states = [
-    'Initializing',
-    'Ignite Reactor',
-    'Stablizing Reaction',
-    'Warming Up Rails',
-    'Ready'
-]
-
-mes = '''
-NG Security Industries
-    REASON v0.1
-'''.strip()
-lcd.message(mes)
-
-for i, v in enumerate(states):
-    lcd.set_cursor(0, 3)
-    lcd.message(v)
-    count = 0
-    while count < 5:
-        spinner()
-        count += 1
+# states = [
+#     'Initializing',
+#     'Ignite Reactor',
+#     'Stablizing Reaction',
+#     'Warming Up Rails',
+#     'Ready'
+# ]
+#
+# mes = '''
+# NG Security Industries
+#     REASON v0.1
+# '''.strip()
+# lcd.message(mes)
+#
+# for i, v in enumerate(states):
+#     lcd.set_cursor(0, 3)
+#     lcd.message(v)
+#     count = 0
