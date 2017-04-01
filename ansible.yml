@@ -14,4 +14,4 @@
       name: get_keys
       enabled: yes
       state: started
-      when: copy_get_keys|changed
+    when: copy_get_keys|changed
