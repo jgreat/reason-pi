@@ -18,6 +18,13 @@ lcd_blue = 7  # Pin 7 is CE1
 lcd_columns = 20
 lcd_rows = 4
 
+def spinner():
+    chars = [ '-', '\\', '|',  '/' ]
+    for c in chars:
+        lcd.message(c)
+        time.sleep(0.2)
+        lcd.move_left()
+
 # Initialize the LCD using the pins above.
 lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
                               lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
@@ -25,11 +32,26 @@ lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
 lcd.set_color(1.0, 0.0, 0.0)
 lcd.clear()
 lcd.home()
-mes = '''
-NG Security Systems
-   REASON v0.0.1
-=>
-Initializing
-'''.strip()
 
+
+states = [
+    'Initializing',
+    'Ignite Reactor',
+    'Stablizing Reaction',
+    'Warming Up Rails',
+    'Ready'
+]
+
+mes = '''
+NG Security Industries
+    REASON v0.1
+'''.strip()
 lcd.message(mes)
+
+for i, v in enumerate(states):
+    lcd.set_cursor(0, 3)
+    lcd.message(v)
+    count = 0
+    while count < 5:
+        spinner()
+        count += 1
