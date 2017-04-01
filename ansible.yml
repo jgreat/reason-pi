@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: localhost
   gather_facts: no
   become: true
   tasks:
@@ -15,3 +15,6 @@
       enabled: yes
       state: started
     when: copy_get_keys|changed
+
+  - pip:
+      name: RPi.GPIO
