@@ -1,5 +1,6 @@
 ---
 - hosts: all
+  gather_facts: no
   tasks:
   - copy:
       src: ./etc/systemd/system/get_keys.service
@@ -7,7 +8,7 @@
       owner: root
       group: root
       mode: 0644
-      register: copy_get_keys
+    register: copy_get_keys
   - service:
       name: get_keys
       enabled: yes
