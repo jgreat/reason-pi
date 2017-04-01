@@ -1,0 +1,11 @@
+[Unit]
+Description=Get SSH public keys from Github
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/pi/reason-pi/bin/get_keys.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
