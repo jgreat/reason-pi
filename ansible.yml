@@ -1,17 +1,15 @@
 ---
-  hosts: all
+- hosts: all
   tasks:
-    - copy:
-        src: ./etc/systemd/system/get_keys.service
-        dest: /etc/systemd/system/get_keys.service
-        owner: root
-        group: root
-        mode: 0644
-        regester: copy_get_keys
-    - service:
-        name: get_keys
-        enabled: yes
-        state: started
-        when: copy_get_keys|changed
-
-    
+  - copy:
+      src: ./etc/systemd/system/get_keys.service
+      dest: /etc/systemd/system/get_keys.service
+      owner: root
+      group: root
+      mode: 0644
+      regester: copy_get_keys
+  - service:
+      name: get_keys
+      enabled: yes
+      state: started
+      when: copy_get_keys|changed
