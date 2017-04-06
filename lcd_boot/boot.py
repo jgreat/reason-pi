@@ -44,9 +44,8 @@ lcd.set_color(1.0, 0.0, 0.0)
 lcd.clear()
 lcd.home()
 msg = '''
-NG Sec. Industries
-REASON v0.0.1
-=>
+ NG Sec. Industries
+   REASON v0.0.1
 '''.strip()
 lcd.message(msg)
 
@@ -84,6 +83,6 @@ for i, state in enumerate(states):
         count += 1
 
 reset_row(2)
-lcd.message('####################')
+lcd.message('########100%########')
 reset_row(3)
 lcd.message('Ready To Fire')
