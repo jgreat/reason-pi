@@ -44,8 +44,8 @@ lcd.set_color(1.0, 0.0, 0.0)
 lcd.clear()
 lcd.home()
 msg = '''
- NG Sec. Industries
-   REASON v0.0.1
+NG Security Ind.
+REASON v0.0.1
 '''.strip()
 lcd.message(msg)
 
