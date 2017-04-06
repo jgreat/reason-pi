@@ -62,9 +62,9 @@ for idx, state in enumerate(states):
 
     reset_row(2)
     bar = (len(states) / lcd_columns) * (idx + 1)
-    while b:
+    while bar:
         lcd.message('=')
-        b -= 1
+        bar -= 1
     ldc.message('>')
 
     reset_row(3)
