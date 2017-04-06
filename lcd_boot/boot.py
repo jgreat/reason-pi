@@ -29,6 +29,11 @@ def spinner(col, row):
     lcd.message('   ')
     time.sleep(0.5)
 
+def reset_row(row):
+    lcd.set_cursor(0, row)
+    lcd.message('                    ')
+    lcd.set_cursor(0, row)
+
 # Initialize the LCD using the pins above.
 lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
                               lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
@@ -52,16 +57,21 @@ states = [
     'Warming Up Rails'
 ]
 
-for state in states:
+for idx, state in enumerate(states):
     count = 0
-    lcd.set_cursor(0, 3)
-    lcd.message('                    ')
-    lcd.set_cursor(0, 3)
+
+    reset_row(2)
+    bar = (len(states) / lcd_columns) * (idx + 1)
+    for b in bar:
+        lcd.message('=')
+    ldc.message('>')
+
+    reset_row(3)
     lcd.message(state)
     while count < 2:
         l = len(state) + 1
         spinner(col=l, row=3)
         count += 1
 
-lcd.set_cursor(0, 3)
+reset_row(3)
 lcd.message('Ready To Fire')
