@@ -18,12 +18,13 @@ lcd_blue = 7  # Pin 7 is CE1
 lcd_columns = 20
 lcd_rows = 4
 
-def spinner():
-    chars = [ '-', '\\', '|',  '/' ]
-    for c in chars:
-        lcd.message(c)
-        time.sleep(0.2)
-        lcd.move_left()
+def spinner(col, row):
+    count = 0
+    while c < 3:
+        lcd.write8(ord('.'), True)
+        time.sleep(0.3)
+        count += 1
+    lcd.set_cursor(col, row)
 
 # Initialize the LCD using the pins above.
 lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
@@ -34,7 +35,7 @@ lcd.clear()
 lcd.home()
 count = 0
 while count < 5:
-    spinner()
+    spinner(4, 0)
     count += 1
 
 # states = [
