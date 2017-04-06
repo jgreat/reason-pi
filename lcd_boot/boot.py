@@ -67,7 +67,7 @@ for i, state in enumerate(states):
     print(idx)
     pct = float(len(states))/float(lcd_columns)
     print(pct)
-    bar = math.ceil(pct*idx)
+    bar = math.ceil(pct * idx * lcd_columns)
     print(bar)
     while bar:
         lcd.message('=')
