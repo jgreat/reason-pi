@@ -61,6 +61,7 @@ for i, state in enumerate(states):
     count = 0
 
     reset_row(2)
+    print(len(states))
     print(len(states) / lcd_columns)
     bar = (len(states) / lcd_columns) * (i + 1)
     print(bar)
