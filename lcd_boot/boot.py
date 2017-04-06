@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import time
+import math
 import Adafruit_CharLCD as LCD
 
 # Raspberry Pi configuration:
@@ -63,7 +64,7 @@ for i, state in enumerate(states):
     reset_row(2)
     print(len(states))
     print(len(states) / float(lcd_columns))
-    bar = (len(states) / float(lcd_columns)) * (i + 1)
+    bar = math.ceil((len(states) / float(lcd_columns)) * (i + 1))
     print(bar)
     while bar:
         lcd.message('=')
