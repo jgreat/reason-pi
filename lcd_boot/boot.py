@@ -20,11 +20,11 @@ lcd_rows = 4
 
 def spinner(col, row):
     count = 0
+    lcd.set_cursor(col, row)
     while count < 3:
         lcd.write8(ord('.'), True)
-        time.sleep(0.3)
+        time.sleep(0.75)
         count += 1
-    lcd.set_cursor(col, row)
 
 # Initialize the LCD using the pins above.
 lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
