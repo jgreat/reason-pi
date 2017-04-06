@@ -63,7 +63,7 @@ for i, state in enumerate(states):
     reset_row(2)
     print(len(states))
     print(len(states) / float(lcd_columns))
-    bar = (len(states) / lcd_columns) * (i + 1)
+    bar = (len(states) / float(lcd_columns)) * (i + 1)
     print(bar)
     while bar:
         lcd.message('=')
