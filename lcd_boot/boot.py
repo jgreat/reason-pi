@@ -23,11 +23,11 @@ def spinner(col, row):
     lcd.set_cursor(col, row)
     while count < 3:
         lcd.write8(ord('.'), True)
-        time.sleep(0.75)
+        time.sleep(0.5)
         count += 1
     lcd.set_cursor(col, row)
     lcd.message('   ')
-    time.sleep(0.75)
+    time.sleep(0.5)
 
 # Initialize the LCD using the pins above.
 lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
@@ -37,26 +37,26 @@ lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
 lcd.set_color(1.0, 0.0, 0.0)
 lcd.clear()
 lcd.home()
-count = 0
-while count < 5:
-    spinner(4, 0)
-    count += 1
+mes = '''
+NG Sec. Industries
+REASON v0.0.1
+=>
+'''.strip()
+lcd.message(msg)
 
-# states = [
-#     'Initializing',
-#     'Ignite Reactor',
-#     'Stablizing Reaction',
-#     'Warming Up Rails',
-#     'Ready'
-# ]
-#
-# mes = '''
-# NG Security Industries
-#     REASON v0.1
-# '''.strip()
-# lcd.message(mes)
-#
-# for i, v in enumerate(states):
-#     lcd.set_cursor(0, 3)
-#     lcd.message(v)
-#     count = 0
+
+states = [
+    'Initializing',
+    'Ignite Reactor',
+    'Stablizing',
+    'Warming Up Rails'
+]
+
+for state in states:
+    count = 0
+    while count < 2:
+        l = len(state) + 1
+        spinner(col=l, row=3)
+        count += 1
+lcd.set_cursor(0, 3)
+lcd.message('Ready')
