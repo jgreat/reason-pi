@@ -73,7 +73,7 @@ for i, state in enumerate(states):
         lcd.message('#')
         bar -= 1
     lcd.set_cursor(9, 2)
-    lcd.message(int(pct * idx * 100))
+    lcd.message(str(pct * idx * 100))
     lcd.message('%')
 
     reset_row(3)
