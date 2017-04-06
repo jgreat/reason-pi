@@ -72,7 +72,9 @@ for i, state in enumerate(states):
     while bar:
         lcd.message('#')
         bar -= 1
-    lcd.message('>')
+    lcd.set_cursor(9, 2)
+    lcd.message(pct * idx * 100)
+    lcd.message('%')
 
     reset_row(3)
     lcd.message(state)
@@ -82,6 +84,6 @@ for i, state in enumerate(states):
         count += 1
 
 reset_row(2)
-message('####################')
+lcd.message('####################')
 reset_row(3)
 lcd.message('Ready To Fire')
