@@ -57,11 +57,12 @@ states = [
     'Warming Up Rails'
 ]
 
-for idx, state in enumerate(states):
+for i, state in enumerate(states):
     count = 0
 
     reset_row(2)
-    bar = (len(states) / lcd_columns) * (idx + 1)
+    print(len(states) / lcd_columns)
+    bar = (len(states) / lcd_columns) * (i + 1)
     print(bar)
     while bar:
         lcd.message('=')
