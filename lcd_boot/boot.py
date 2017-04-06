@@ -55,6 +55,8 @@ states = [
 for state in states:
     count = 0
     lcd.set_cursor(0, 3)
+    lcd.message('                    ')
+    lcd.set_cursor(0, 3)
     lcd.message(state)
     while count < 2:
         l = len(state) + 1
@@ -62,4 +64,4 @@ for state in states:
         count += 1
 
 lcd.set_cursor(0, 3)
-lcd.message('Ready')
+lcd.message('Ready To Fire')
