@@ -70,7 +70,7 @@ for i, state in enumerate(states):
     bar = math.ceil(pct * idx * lcd_columns)
     print(bar)
     while bar:
-        lcd.message('=')
+        lcd.message('#')
         bar -= 1
     lcd.message('>')
 
@@ -81,5 +81,7 @@ for i, state in enumerate(states):
         spinner(col=l, row=3)
         count += 1
 
+reset_row(2)
+message('####################')
 reset_row(3)
 lcd.message('Ready To Fire')
