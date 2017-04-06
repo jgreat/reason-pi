@@ -62,6 +62,7 @@ for i, state in enumerate(states):
     count = 0
 
     reset_row(2)
+    print(i)
     print(len(states))
     print(len(states) / float(lcd_columns))
     bar = math.ceil((len(states) / float(lcd_columns)) * (i + 1))
