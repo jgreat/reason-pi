@@ -36,7 +36,7 @@ def dots(col, row):
 # -->
 # --->
 def arrow(col, row):
-    dash = 20 - col - 1
+    dash = 20 - col
     print(dash)
     count = 0
     while count < dash:
@@ -106,8 +106,6 @@ lcd.message('####################')
 reset_row(3)
 fire = 'Ready To Fire'
 lcd.message(fire)
-print(fire)
-print(len(fire))
-arrow(14, 3)
 
-# while pw_sw < 1:
+while pw_sw < 1:
+    arrow(len(fire + 1), 3)
