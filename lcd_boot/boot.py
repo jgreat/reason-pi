@@ -50,7 +50,7 @@ def arrow(col, row):
 
 def reset_row(row):
     lcd.set_cursor(0, row)
-    lcd.message('                    ')
+    lcd.message(' ' * 20)
     lcd.set_cursor(0, row)
 
 
@@ -103,6 +103,8 @@ lcd.message('####################')
 reset_row(3)
 fire = 'Ready To Fire'
 lcd.message(fire)
+print(fire)
+print(len(fire))
 arrow(len(fire) + 1, 3)
 
 # while pw_sw < 1:
