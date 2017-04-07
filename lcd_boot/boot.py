@@ -73,30 +73,30 @@ states = [
     'Warming Up Rails'
 ]
 
-for i, state in enumerate(states):
-    count = 0
-
-    reset_row(2)
-    print(i)
-    idx = float(i + 1)
-    print(idx)
-    pct = float(len(states)) / float(lcd_columns)
-    print(pct)
-    bar = math.ceil(pct * idx * lcd_columns)
-    print(bar)
-    while bar:
-        lcd.message('#')
-        bar -= 1
-    lcd.set_cursor(7, 2)
-    lcd.message(str(pct * idx * 100))
-    lcd.message('%')
-
-    reset_row(3)
-    lcd.message(state)
-    while count < 2:
-        l = len(state) + 1
-        dots(col=l, row=3)
-        count += 1
+# for i, state in enumerate(states):
+#     count = 0
+#
+#     reset_row(2)
+#     print(i)
+#     idx = float(i + 1)
+#     print(idx)
+#     pct = float(len(states)) / float(lcd_columns)
+#     print(pct)
+#     bar = math.ceil(pct * idx * lcd_columns)
+#     print(bar)
+#     while bar:
+#         lcd.message('#')
+#         bar -= 1
+#     lcd.set_cursor(7, 2)
+#     lcd.message(str(pct * idx * 100))
+#     lcd.message('%')
+#
+#     reset_row(3)
+#     lcd.message(state)
+#     while count < 2:
+#         l = len(state) + 1
+#         dots(col=l, row=3)
+#         count += 1
 
 reset_row(2)
 lcd.message('####################')
