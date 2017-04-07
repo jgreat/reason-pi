@@ -108,4 +108,4 @@ fire = 'Ready To Fire'
 lcd.message(fire)
 pw_sw = 0
 while pw_sw < 1:
-    arrow(len(fire + 1), 3)
+    arrow(len(fire) + 1, 3)
