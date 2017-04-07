@@ -36,7 +36,7 @@ def dots(col, row):
 # -->
 # --->
 def arrow(col, row):
-    dash = 20 - row
+    dash = 20 - col
     count = 0
     lcd.set_cursor(col, row)
     while count < dash:
