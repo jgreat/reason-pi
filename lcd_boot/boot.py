@@ -44,8 +44,8 @@ def arrow(col, row):
         lcd.message('>')
         time.sleep(0.5)
         count += 1
-    lcd.set_cursor(col, row)
-    lcd.message(' ' * dash)
+        lcd.set_cursor(col, row)
+        lcd.message(' ' * dash)
 
 
 def reset_row(row):
