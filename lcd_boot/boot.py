@@ -37,15 +37,12 @@ def dots(col, row):
 # --->
 def arrow(col, row):
     dash = 20 - col
-    print(dash)
     count = 0
     while count < dash:
         lcd.message(' ' * dash)
         lcd.set_cursor(col, row)
         lcd.message('-' * count)
-        print('-' * count)
         lcd.message('>')
-        print('>')
         time.sleep(0.5)
         count += 1
         lcd.set_cursor(col, row)
