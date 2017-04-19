@@ -39,8 +39,8 @@ def on(key_switch, lcd):
     framebuffer = [
         '   REASON v1.0B7',
         ' Ng Security Indust.',
-        '',
-        ''
+        ' ',
+        ' '
     ]
     write_to_lcd(lcd, framebuffer, 20)
     # long_string = 'PRERELEASE VERSION -- NOT FOR FIELD USE -- DO NOT TEST IN A POPULATED AREA -- READY TO FIRE --'
