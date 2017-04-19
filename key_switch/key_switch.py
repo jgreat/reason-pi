@@ -15,7 +15,7 @@ def off():
 
 key_switch = Button(pin=26)
 
-button.when_pressed = on
-button.when_released = off
+key_switch.when_pressed = on
+key_switch.when_released = off
 
 pause()
