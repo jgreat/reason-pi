@@ -28,12 +28,13 @@ boot_message = '''
 
 lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
                               lcd_d7, lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
-lcd.enable_display(False)
+lcd.clear()
+lcd.set_backlight(0)
 
 
 def on():
     print('Switch is On')
-    lcd.enable_display(True)
+    lcd.set_backlight(1)
     lcd.set_color(1.0, 0.0, 0.0)
     lcd.clear()
     lcd.home()
@@ -43,7 +44,7 @@ def on():
 def off():
     print('Switch is Off')
     lcd.clear()
-    lcd.enable_display(False)
+    lcd.set_backlight(0)
 
 
 key_switch = Button(pin=26)
