@@ -70,14 +70,15 @@ def off():
     # lcd.clear()
     # lcd.set_backlight(0)
 
-
-with Button(26) as key_switch:
     # lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
     #   lcd_d7, lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
 
     # lcd.clear()
     # lcd.set_backlight(0)
-    lcd = 0
-    key_switch.when_pressed = on()
-    key_switch.when_released = off()
-    pause()
+
+
+key_switch = Button(26)
+lcd = 0
+key_switch.when_pressed = on()
+key_switch.when_released = off()
+pause()
