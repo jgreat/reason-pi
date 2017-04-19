@@ -22,8 +22,6 @@ lcd_rows = 4
 
 lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
                               lcd_d7, lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
-lcd.clear()
-lcd.set_backlight(0)
 
 
 def scroll(lcd, text, pause1=False, pause2=False, rep=False):
@@ -58,7 +56,7 @@ def scroll(lcd, text, pause1=False, pause2=False, rep=False):
     lcd.clear()
 
 
-def on():
+def on(key_switch, lcd):
     print('Switch is On')
     lcd.set_backlight(1)
     lcd.set_color(1.0, 0.0, 0.0)
@@ -83,13 +81,15 @@ def on():
         time.sleep(.5)
 
 
-def off():
+def off(lcd):
     print('Switch is Off')
     lcd.clear()
     lcd.set_backlight(0)
 
 
+lcd.clear()
+lcd.set_backlight(0)
 key_switch = Button(pin=26)
-key_switch.when_pressed = on
-key_switch.when_released = off
+key_switch.when_pressed = on(key_switch, lcd)
+key_switch.when_released = off(lcd)
 pause()
