@@ -43,11 +43,11 @@ def on(key_switch, lcd):
         ''
     ]
     write_to_lcd(lcd, framebuffer, 20)
-    long_string = 'PRERELEASE VERSION -- NOT FOR FIELD USE -- DO NOT TEST IN A POPULATED AREA -- READY TO FIRE --'
-    for i in range(len(long_string) - 20 + 1):
-        framebuffer[2] = long_string[i:i + 20]
-        write_to_lcd(lcd, framebuffer, 20)
-        time.sleep(0.2)
+    # long_string = 'PRERELEASE VERSION -- NOT FOR FIELD USE -- DO NOT TEST IN A POPULATED AREA -- READY TO FIRE --'
+    # for i in range(len(long_string) - 20 + 1):
+    #     framebuffer[2] = long_string[i:i + 20]
+    #     write_to_lcd(lcd, framebuffer, 20)
+    #     time.sleep(0.2)
 
     # lcd.message('   REASON v1.0B7')
     # lcd.set_cursor(0, 1)
