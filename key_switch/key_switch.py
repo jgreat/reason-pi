@@ -31,14 +31,14 @@ def write_to_lcd(lcd, framebuffer, num_cols):
 def on(key_switch, lcd):
     print('Switch is On')
     # lcd.set_backlight(1)
-    lcd.set_color(1.0, 0.0, 0.0)
-    lcd.clear()
-    framebuffer = [
-        '   REASON v1.0B7',
-        ' Ng Security Indust.',
-        ' ',
-        ' '
-    ]
+    # lcd.set_color(1.0, 0.0, 0.0)
+    # lcd.clear()
+    # framebuffer = [
+    #     '   REASON v1.0B7',
+    #     ' Ng Security Indust.',
+    #     ' ',
+    #     ' '
+    # ]
     # write_to_lcd(lcd, framebuffer, 20)
     # long_string = 'PRERELEASE VERSION -- NOT FOR FIELD USE -- DO NOT TEST IN A POPULATED AREA -- READY TO FIRE --'
     # for i in range(len(long_string) - 20 + 1):
@@ -67,15 +67,16 @@ def on(key_switch, lcd):
 
 def off(lcd):
     print('Switch is Off')
-    lcd.clear()
+    # lcd.clear()
     # lcd.set_backlight(0)
 
 
-lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
-                              lcd_d7, lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
+# lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
+    #   lcd_d7, lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
 
-lcd.clear()
-lcd.set_backlight(0)
+# lcd.clear()
+# lcd.set_backlight(0)
+lcd = 0
 key_switch = Button(pin=19, bounce_time=0.5)
 key_switch.when_pressed = on(key_switch, lcd)
 key_switch.when_released = off(lcd)
