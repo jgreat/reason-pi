@@ -1,13 +1,21 @@
-#!/bin/env python
+#!/bin/python
 
 from gpiozero import Button
+from signal import pause
 import time
+
+
+def on():
+    print('Switch is On')
+
+
+def off():
+    print('Switch is Off')
+
 
 key_switch = Button(pin=26)
 
-while true:
-    if key_switch.is_pressed:
-        print('Switch is On')
-    else:
-        print('Seitch is Off')
-    time.sleep(1)
+button.when_pressed = on
+button.when_released = off
+
+pause()
