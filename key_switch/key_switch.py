@@ -28,7 +28,7 @@ def write_to_lcd(lcd, framebuffer, num_cols):
         lcd.message('\n')
 
 
-def on(key_switch, lcd):
+def on(lcd):
     print('Switch is On')
     # lcd.set_backlight(1)
     # lcd.set_color(1.0, 0.0, 0.0)
@@ -78,6 +78,6 @@ with Button(16) as key_switch:
     # lcd.clear()
     # lcd.set_backlight(0)
     lcd = 0
-    key_switch.when_pressed = on(key_switch, lcd)
+    key_switch.when_pressed = on(lcd)
     key_switch.when_released = off(lcd)
     pause()
