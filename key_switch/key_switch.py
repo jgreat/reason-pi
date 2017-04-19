@@ -72,13 +72,14 @@ def on(key_switch, lcd):
     lcd.autoscroll(False)
     lcd.set_cursor(0, 3)
     while True:
-        if not key_switch.is_pressed:
+        if key_switch.is_pressed:
+            lcd.message(' ULTIMA RATIO REGUM')
+            time.sleep(2)
+            lcd.set_cursor(0, 3)
+            lcd.message(' ' * 20)
+            time.sleep(.5)
+        else:
             break
-        lcd.message(' ULTIMA RATIO REGUM')
-        time.sleep(2)
-        lcd.set_cursor(0, 3)
-        lcd.message(' ' * 20)
-        time.sleep(.5)
 
 
 def off(lcd):
