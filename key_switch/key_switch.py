@@ -28,7 +28,7 @@ def write_to_lcd(lcd, framebuffer, num_cols):
     lcd.home()
     for row in framebuffer:
         lcd.message(row.ljust(num_cols)[:num_cols])
-        lcd.write_string('\n')
+        lcd.message('\n')
 
 
 def on(key_switch, lcd):
