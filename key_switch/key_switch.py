@@ -20,9 +20,6 @@ lcd_blue = 7  # Pin 7 is CE1
 lcd_columns = 20
 lcd_rows = 4
 
-lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
-                              lcd_d7, lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
-
 
 def write_to_lcd(lcd, framebuffer, num_cols):
     lcd.home()
@@ -42,7 +39,7 @@ def on(key_switch, lcd):
         ' ',
         ' '
     ]
-    write_to_lcd(lcd, framebuffer, 20)
+    # write_to_lcd(lcd, framebuffer, 20)
     # long_string = 'PRERELEASE VERSION -- NOT FOR FIELD USE -- DO NOT TEST IN A POPULATED AREA -- READY TO FIRE --'
     # for i in range(len(long_string) - 20 + 1):
     #     framebuffer[2] = long_string[i:i + 20]
@@ -73,6 +70,9 @@ def off(lcd):
     lcd.clear()
     lcd.set_backlight(0)
 
+
+lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
+                              lcd_d7, lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
 
 lcd.clear()
 lcd.set_backlight(0)
