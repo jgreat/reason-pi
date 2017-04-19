@@ -25,8 +25,6 @@ lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
 lcd.clear()
 lcd.set_backlight(0)
 
-from time import sleep
-
 
 def scroll(lcd, text, pause1=False, pause2=False, rep=False):
     PAUSE_NEXT = 2
@@ -50,12 +48,12 @@ def scroll(lcd, text, pause1=False, pause2=False, rep=False):
             nxt = x + 1
             lcd.message(rows[x] + "\n")
             if nxt == n_rows:
-                sleep(2)
+                time.sleep(2)
 
                 break
             else:
                 lcd.message(rows[nxt])
-                sleep(PAUSE_REP)
+                time.sleep(PAUSE_REP)
 
     lcd.clear()
 
@@ -70,13 +68,19 @@ def on():
     lcd.set_cursor(0, 1)
     lcd.message(' Ng Security Indust.')
     lcd.set_cursor(0, 2)
-    scroll(lcd, 'PRERELEASE VERSION -- NOT FOR FIELD USE -- DO NOT TEST IN A POPULATED AREA -- READY TO FIRE --')
+    lcd.autoscroll(True)
+    lcd.message(
+        'PRERELEASE VERSION -- NOT FOR FIELD USE -- DO NOT TEST IN A POPULATED AREA -- READY TO FIRE --')
+    lcd.autoscroll(False)
     lcd.set_cursor(0, 3)
     while True:
+        if not key_switch.is_pressed():
+            break
         lcd.message(' ULTIMA RATIO REGUM')
         time.sleep(2)
         lcd.set_cursor(0, 3)
         lcd.message(' ' * 20)
+        time.sleep(.5)
 
 
 def off():
