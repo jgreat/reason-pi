@@ -3,7 +3,7 @@
 from gpiozero import Button
 from signal import pause
 import time
-import Adafruit_CharLCD as LCD
+#import Adafruit_CharLCD as LCD
 
 # Raspberry Pi configuration:
 lcd_rs = 27  # Change this to pin 21 on older revision Raspberry Pi's
@@ -21,14 +21,14 @@ lcd_columns = 20
 lcd_rows = 4
 
 
-def write_to_lcd(lcd, framebuffer, num_cols):
-    lcd.home()
-    for row in framebuffer:
-        lcd.message(row.ljust(num_cols)[:num_cols])
-        lcd.message('\n')
+# def write_to_lcd(lcd, framebuffer, num_cols):
+#     lcd.home()
+#     for row in framebuffer:
+#         lcd.message(row.ljust(num_cols)[:num_cols])
+#         lcd.message('\n')
 
 
-def on(lcd):
+def on:
     print('Switch is On')
     # lcd.set_backlight(1)
     # lcd.set_color(1.0, 0.0, 0.0)
@@ -65,7 +65,7 @@ def on(lcd):
     #         break
 
 
-def off(lcd):
+def off:
     print('Switch is Off')
     # lcd.clear()
     # lcd.set_backlight(0)
@@ -78,6 +78,6 @@ with Button(16) as key_switch:
     # lcd.clear()
     # lcd.set_backlight(0)
     lcd = 0
-    key_switch.when_pressed = on(lcd)
-    key_switch.when_released = off(lcd)
+    key_switch.when_pressed = on
+    key_switch.when_released = off
     pause()
