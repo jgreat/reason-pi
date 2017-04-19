@@ -76,7 +76,7 @@ def off(lcd):
 
 lcd.clear()
 lcd.set_backlight(0)
-key_switch = Button(pin=26)
+key_switch = Button(pin=26, bounce_time=0.5)
 key_switch.when_pressed = on(key_switch, lcd)
 key_switch.when_released = off(lcd)
 pause()
