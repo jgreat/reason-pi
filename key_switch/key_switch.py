@@ -28,7 +28,7 @@ lcd_rows = 4
 #         lcd.message('\n')
 
 
-def on:
+def on():
     print('Switch is On')
     # lcd.set_backlight(1)
     # lcd.set_color(1.0, 0.0, 0.0)
@@ -65,7 +65,7 @@ def on:
     #         break
 
 
-def off:
+def off():
     print('Switch is Off')
     # lcd.clear()
     # lcd.set_backlight(0)
@@ -78,6 +78,6 @@ with Button(16) as key_switch:
     # lcd.clear()
     # lcd.set_backlight(0)
     lcd = 0
-    key_switch.when_pressed = on
-    key_switch.when_released = off
+    key_switch.when_pressed = on()
+    key_switch.when_released = off()
     pause()
