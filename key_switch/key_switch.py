@@ -1,4 +1,4 @@
-#!/bin/python
+#!/usr/bin/python
 
 from gpiozero import Button
 from signal import pause
