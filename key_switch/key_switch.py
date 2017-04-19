@@ -20,8 +20,7 @@ lcd_blue = 7  # Pin 7 is CE1
 lcd_columns = 20
 lcd_rows = 4
 
-boot_message = '''
-   REASON v1.0B7
+boot_message = '''   REASON v1.0B7
  Ng Security Indst.
  ULTIMA RATIO REGUM
 '''
