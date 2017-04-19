@@ -38,7 +38,7 @@ def on():
     lcd.set_color(1.0, 0.0, 0.0)
     lcd.clear()
     lcd.home()
-    lcd.message(boot_message.strip())
+    lcd.message(boot_message.lstrip())
 
 
 def off():
