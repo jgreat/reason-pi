@@ -30,7 +30,7 @@ def write_to_lcd(lcd, framebuffer, num_cols):
 
 def on(key_switch, lcd):
     print('Switch is On')
-    lcd.set_backlight(1)
+    # lcd.set_backlight(1)
     lcd.set_color(1.0, 0.0, 0.0)
     lcd.clear()
     framebuffer = [
@@ -68,7 +68,7 @@ def on(key_switch, lcd):
 def off(lcd):
     print('Switch is Off')
     lcd.clear()
-    lcd.set_backlight(0)
+    # lcd.set_backlight(0)
 
 
 lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
